@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #mainImage {
+            width: 100%;
+            height: auto;
+        }
+        .content-section {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">My Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showSection('hobbies')">Hobbies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showSection('favorites')">Favorites</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showSection('achievements')">Achievements</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <img id="mainImage" src="https://via.placeholder.com/1200x400" alt="Portfolio Banner">
+
+    <div class="container mt-4">
+        <div id="hobbies" class="content-section">
+            <h2>Hobbies</h2>
+            <p>Here are some of my hobbies: painting, hiking, reading books, and playing guitar.</p>
+        </div>
+        <div id="favorites" class="content-section">
+            <h2>Favorites</h2>
+            <p>My favorite movies are Inception, Interstellar, and The Matrix. I also love pizza and sushi!</p>
+        </div>
+        <div id="achievements" class="content-section">
+            <h2>Achievements</h2>
+            <p>Some of my notable achievements include graduating with honors, winning a regional coding competition, and completing a marathon.</p>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.style.display = 'none');
+
+            const activeSection = document.getElementById(sectionId);
+            if (activeSection) {
+                activeSection.style.display = 'block';
+            }
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
